@@ -1,20 +1,23 @@
+
 public class Main {
 
     public static void main(String[] args) {
-    	//faz leitura
         Leitura dados = new Leitura();
+        Ordena ordena = new Ordena();
         
         String arquivo = "ex3";
         
         String texto = dados.pegarLinhas("src/main/java/exercicios/"+arquivo);
         String textoTratado = dados.tratarTexto(texto);
         
+        String[] textoTratadoSplit = ordena.separar(textoTratado);
+        String[] arr = ordena.removerPalavrasRepetidasNoArray(textoTratadoSplit);
         
-        //orndena o texto
-        Ordena ordem = new Ordena();
-        String ordenado = ordem.recebe(textoTratado);
+        /*
+        falta identificar as palavras nó e suas palavras seguintes e ordenar
+        */
         
-        
-        System.out.println(ordenado);
+        String[] arr1 = ordena.ordenarOrdemAlfabeto(arr);
+        ordena.printArray(arr1);
     }
 }
