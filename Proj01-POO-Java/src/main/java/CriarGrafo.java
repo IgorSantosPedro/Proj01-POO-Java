@@ -40,12 +40,12 @@ public class CriarGrafo {
 		
 		for (int x = 0; x<cont; x++) {
 			for (int j = x + 1; j<cont; j++) { //passar por todas as linhas da matriz
-				if (prox[j][0].equals(prox[x][0])) {  //identificar repetições
-					for (int i = 0; i <= col; i++) {  //passar pelas colunas dessa repetição
+				if (prox[j][0].equals(prox[x][0])) {  //identificar repetiÃ§Ãµes
+					for (int i = 0; i <= col; i++) {  //passar pelas colunas dessa repetiÃ§Ã£o
 						if (prox[j][i] == null) {  //achar o primeiro valor null da linha
 							prox[j][i] = prox[x][t];
 							t++;
-							if (prox[j][i] == prox[j][i-1]) {  // identificar se o valor apresentado é igual ao ultimo ja existente
+							if (prox[j][i] == prox[j][i-1]) {  // identificar se o valor apresentado Ã© igual ao ultimo ja existente
 								prox[i][j] = null;  //elimina o ultimo item colocado
 							}
 							else {
@@ -63,12 +63,12 @@ public class CriarGrafo {
 		}
 		
 		for (int l = 0; l < prox.length; l++)  {  
-            for (int c = 0; c < prox[0].length; c++)     { 
-                if(prox[l][c] == null) {
-                	prox[l][c] = "";
-                }
-            }  
-          }
+            		for (int c = 0; c < prox[0].length; c++)     { 
+                		if(prox[l][c] == null) {
+                			prox[l][c] = "";
+                		}
+            		}  
+          	}
 		
 		return prox;
 	}
@@ -81,8 +81,8 @@ public class CriarGrafo {
 		String[][] novaMatriz = new String[1000][1000];
 		
 		for (int i = 0; i<cont; i++) {
-				if (elimina[i][0] != "") {
-					for (int j = 0; j<col; j++) {
+			if (elimina[i][0] != "") {
+				for (int j = 0; j<col; j++) {
 					novaMatriz[p][q] = elimina[i][j];
 					q++;
 					
@@ -92,12 +92,12 @@ public class CriarGrafo {
 		}
 		
 		for (int l = 0; l < novaMatriz.length; l++)  {  
-            for (int c = 0; c < novaMatriz[0].length; c++)     { 
-                if(novaMatriz[l][c] == null) {
-                	novaMatriz[l][c] = "";
-                }
-            }  
-          }
+            		for (int c = 0; c < novaMatriz[0].length; c++)     { 
+                		if(novaMatriz[l][c] == null) {
+                			novaMatriz[l][c] = "";
+                		}
+            		}  
+          	}
 		
 		return novaMatriz;
 	}
