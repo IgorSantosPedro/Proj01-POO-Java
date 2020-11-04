@@ -14,7 +14,6 @@ public class CriarGrafo {
         // criar um hashMap cm uma chave e hashSet vazio
         for(int i=0; i<texto.length-1; i++) {
             HashSet<String> vazio = new HashSet<>();            
-            System.out.println(vazio);
             
             for(String key : lista.keySet()) {  // procurar por todas as chaves cadastradas
                 
@@ -23,17 +22,12 @@ public class CriarGrafo {
                 } else {
                     vazio.add(texto[i+1]);  // adiciona no hashSet
                 }
-                
 
-                
-                System.out.println(i+" - "+texto[i]+", "+vazio);
             }
             
             lista.put(texto[i], vazio);
         }
-        
-        System.out.println("\n"+lista);
- 
+         
         return lista;
     }
 

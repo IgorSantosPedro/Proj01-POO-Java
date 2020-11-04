@@ -10,7 +10,7 @@ public class Main {
         CriarGrafo listaPalavra = new CriarGrafo();
         GerarCsv csv = new GerarCsv();
         
-        String arquivo = "ex3";
+        String arquivo = "ex4";
         
         String texto = dados.pegarLinhas("src/main/java/exercicios/"+arquivo);
         String textoTratado = dados.tratarTexto(texto);
