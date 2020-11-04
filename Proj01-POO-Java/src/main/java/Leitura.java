@@ -33,6 +33,11 @@ public class Leitura {
         textoTratado = textoTratado.replace("  ", " ");
         return textoTratado;
     }
+    
+    static String[] separar(String texto) {
+        String palavrasTexto[] = texto.split(" ");
+        return palavrasTexto;
+    }
 }
 
 

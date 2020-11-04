@@ -1,18 +1,45 @@
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Leitura dados = new Leitura();
-        Ordena ordena = new Ordena();
         CriarGrafo listaPalavra = new CriarGrafo();
+        GerarCsv csv = new GerarCsv();
         
-        String arquivo = "ex3";
+        String arquivo = "ex4";
         
-        String texto = dados.pegarLinhas("exercicios/"+arquivo);
+        String texto = dados.pegarLinhas("src/main/java/exercicios/"+arquivo);
         String textoTratado = dados.tratarTexto(texto);
+        String[] textoTratadoSplit = dados.separar(textoTratado);
         
-        String[] textoTratadoSplit = ordena.separar(textoTratado);
+        HashMap<String, HashSet<String>> hash = listaPalavra.list(textoTratadoSplit);
         
+        
+        String[] g = listaPalavra.transformarArray(hash);
+        
+        csv.GerarArquivoCsv(g, arquivo);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
         String[][] lista = CriarGrafo.listar(textoTratadoSplit);
         String[][] proximo = CriarGrafo.proximo(lista);
         String[][] elimina = CriarGrafo.repeti(proximo);
@@ -25,21 +52,11 @@ public class Main {
             	}
             }  
             System.out.println(" "); //muda de linha
-          }  
+          }
+          
         
-        String[] arr = ordena.removerPalavrasRepetidasNoArray(textoTratadoSplit);
-        
-        /*
-        falta identificar as palavras nó e suas palavras seguintes e ordenar
-        */
-        
-        String[] arr1 = ordena.ordenarOrdemAlfabeto(arr);
-        
-        
-    }
+        System.out.println(Arrays.deepToString(lista)); 
+       */
 
-	private static String toString(String x) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    }
 }
