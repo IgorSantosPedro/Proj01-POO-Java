@@ -11,7 +11,6 @@ public class CriarGrafo {
         //quando ta verificando uma palavra que é chave já cadastrada e
         //muda pra uma palavra que não é, o hashSet não reseta (q nem o 4 pra 5)
         
-        
         // criar um hashMap cm uma chave e hashSet vazio
         for(int i=0; i<texto.length-1; i++) {
             HashSet<String> vazio = new HashSet<>();            

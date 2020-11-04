@@ -21,7 +21,7 @@ public class Main {
         
         String[] g = listaPalavra.transformarArray(hash);
         
-        //csv.GerarArquivoCsv(g, arquivo);
+        csv.GerarArquivoCsv(g, arquivo);
         
         
         
