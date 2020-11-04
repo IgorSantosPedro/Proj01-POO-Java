@@ -1,6 +1,4 @@
-
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -12,9 +10,9 @@ public class Main {
         CriarGrafo listaPalavra = new CriarGrafo();
         GerarCsv csv = new GerarCsv();
         
-        String arquivo = "ex4";
+        String arquivo = "ex3";
         
-        String texto = dados.pegarLinhas("java/exercicios/"+arquivo);
+        String texto = dados.pegarLinhas("src/main/java/exercicios/"+arquivo);
         String textoTratado = dados.tratarTexto(texto);
         String[] textoTratadoSplit = dados.separar(textoTratado);
         
@@ -23,7 +21,7 @@ public class Main {
         
         String[] g = listaPalavra.transformarArray(hash);
         
-        csv.GerarArquivoCsv(g, arquivo);
+        //csv.GerarArquivoCsv(g, arquivo);
         
         
         

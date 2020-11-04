@@ -1,9 +1,6 @@
-import java.util.List;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.stream.Collectors;
 
 
 public class CriarGrafo {
@@ -11,26 +8,32 @@ public class CriarGrafo {
 
     public static HashMap<String, HashSet<String>> list(String[] texto) {
         HashMap<String, HashSet<String>> lista = new HashMap<>();
+        //quando ta verificando uma palavra que é chave já cadastrada e
+        //muda pra uma palavra que não é, o hashSet não reseta (q nem o 4 pra 5)
         
         
         // criar um hashMap cm uma chave e hashSet vazio
         for(int i=0; i<texto.length-1; i++) {
             HashSet<String> vazio = new HashSet<>();            
+            System.out.println(vazio);
             
-            // procurar por todas as chaves cadastradas
-            for(String key : lista.keySet()) {
+            for(String key : lista.keySet()) {  // procurar por todas as chaves cadastradas
                 
                 if(texto[i].equals(key)) {  // se a palavra sendo verificada é uma chave
-                    lista.get(key).add(texto[++i]);
-                    
+                    lista.get(key).add(texto[++i]);  // adiciona no hashMap
                 } else {
-                    vazio.add(texto[i++]);
+                    vazio.add(texto[i+1]);  // adiciona no hashSet
                 }
-                //System.out.println(i+" - "+texto[i]+", "+vazio);
+                
+
+                
+                System.out.println(i+" - "+texto[i]+", "+vazio);
             }
             
             lista.put(texto[i], vazio);
         }
+        
+        System.out.println("\n"+lista);
  
         return lista;
     }
