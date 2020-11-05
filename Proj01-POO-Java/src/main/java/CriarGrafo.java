@@ -8,8 +8,6 @@ public class CriarGrafo {
 
     public static HashMap<String, HashSet<String>> list(String[] texto) {
         HashMap<String, HashSet<String>> lista = new HashMap<>();
-        //quando ta verificando uma palavra que é chave já cadastrada e
-        //muda pra uma palavra que não é, o hashSet não reseta (q nem o 4 pra 5)
         
         // criar um hashMap cm uma chave e hashSet vazio
         for(int i=0; i<texto.length-1; i++) {
